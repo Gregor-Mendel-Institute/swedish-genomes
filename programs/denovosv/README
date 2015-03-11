@@ -1,0 +1,71 @@
+here's a stable version of ad hoc tools used to derive large SVs from NGS with denovo assembled contigs
+
+
+REQUIRED Packages
+
+python 2.7 (but included argparse.py for older versions)
+numpy
+
+
+WORKFLOW
+
+the basic workflow is as such:
+
+NGS output (e.g. fastq)
+     |
+Denovo assembly (e.g. SOAPdenovo)
+(fasta file with all contigs/scaffolds)
+     |
+Alignment to reference
+(currently just BLAST with output format 6)
+(with gapopen and extend penalty (e.g. 2,1))
+(XXXX.blast6)
+     |
+Get SV from single sample
+denovo_sv.py (use python denovo_sv.py -h for help)
+(XXXX.raw)
+     |
+Combine SV across samples
+combine_denovo_sv.py (use python combine_denovo_sv.py -h for help)
+('final' output)
+
+
+FILES INCLUDED
+
+denovo_sv.py 
+combine_denovo_sv.py
+scaffolds.py (backend of denovo_sv.py)
+argparse.py (included for compatibility with older python)
+6901.scafSeq (sample input:scaff of denovo_sv.py)
+6901.scafSeq.blast6 (sample input:blast of denovo_sv.py)
+6901.raw (sample output of denovo_sv.py)     
+sample_combined_sv.txt (sample output of combine_denovo_sv.py)
+
+note that all sample input/output are truncated to reduce download size
+
+
+OUTPUT FILE FORMAT (in order of columns)
+
+* denovo_sv.py 
+type of event
+breakpoint 1 chromosome
+breakpoint 1 coordinate
+breakpoint 2 chromosome
+breakpoint 2 coordinate
+number of N between aligned fragments on scaffold (indicate scaffolding, may be bad quality)
+number of bases between aligned fragments on contig/scaffold
+number of bases between aligned fragments on reference
+infered from which contig/scaffold
+
+* combine_denovo_sv.py
+type of event
+breakpoint 1 chromosome
+breakpoint 1 coordinate
+breakpoint 2 chromosome
+breakpoint 2 coordinate
+allele frequency of events with no N between breakpoints
+allele frequency of events
+allele frequency of events, allowing multiple from same sample; may indicate merging of 2 events into 1 if higher than last column
+distance between breakpoints on contig/scaffold
+distance between breakpoints on reference
+comma separated list of samples containing this event
