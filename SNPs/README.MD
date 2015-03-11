@@ -1,6 +1,9 @@
-there are three types of files in the subfolders:
+# SNPs
 
-info file columns:
+There are three types of files in the subfolders:
+
+## Info file columns:
+
 1. chromosome;
 2. position;
 3. average Q-value
@@ -10,11 +13,12 @@ info file columns:
 7. long-range LD flag: The flag denoting whether there is a SNP that are in long range LD with this SNP, indicating potential mapping artifacts.
 
 
-csv-files (chr1-5)
+## csv-files (chr1-5):
+
 The first line is the header for all the sample IDs. In the remaining lines, the first two columns are chromosome and coordinate, followed by the actual SNP calls. “N” means that the call for this site is missing.
 
 
-annotations file columns:
+## Annotations file columns:
 1. chromosome
 2. coordinate
 3. reference allele

@@ -1,4 +1,6 @@
-there are three types of files in the subfolders, and these are based on the SNP-formats, extended for indels:
+# Indels
+
+There are three types of files in the subfolders, and these are based on the SNP-formats, extended for indels:
 
 
 info file columns:
@@ -13,14 +15,14 @@ info file columns:
 9. call-method: the method(s) that called this event.
 
 
-csv-files (chr1-5)
+## csv-files (chr1-5)
 The format is the same for the SNP file, with "-1", "1" and "0" denoting the no-call, alternative allele and reference allele, respectively.
 
 
-annotations file columns:
+## annotations file columns:
 The same format as for SNPs, but with two lines per polymorphism for the starting and ending point of that indel, respectively.
 
 
-Comments:
+## Comments:
 Be aware that the coordinates for indels are according to the vcf-format (see e.g. http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-40 ). In brief that means the coordinate points at the base pair before the event: an insertion takes place between the bp of the coordinate and the next one, a deletion takes place from the next bp (so the bp of the locus is the last one still present).
 

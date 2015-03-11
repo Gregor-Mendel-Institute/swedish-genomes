@@ -11,11 +11,11 @@ In total we identiﬁed around 4.5M SNPs, 576k short indels, 23k transposable el
 * SNPs
  * [Original](SNPs/original) (+ annotations)
  * [Imputed](SNPs/imputed) (+ annotations)
- * [ReadMe](SNPs/README.txt)
+ * [ReadMe](SNPs/)
 * Small indels
  * [Original](Indels/original) (+ annotations)
  * [Imputed](Indels/imputed)
- * [ReadMe](Indels/README.txt)
+ * [ReadMe](Indels/)
 * [Large structural variants](SV/)
 
 
@@ -35,7 +35,7 @@ In total we identiﬁed around 4.5M SNPs, 576k short indels, 23k transposable el
 
 These are the scripts that format genotypes files and submit MACH jobs to our cluster. Please note that these scripts are not intended to be easily usable elsewhere.
 
-* [Scripts](programs/math_scripts)
+* [Scripts](programs/mach_scripts)
 
 
 ## Other files
@@ -48,7 +48,7 @@ These are the scripts that format genotypes files and submit MACH jobs to our cl
 * [Multiple alignments for candidate genes from Fig 2](files/candidate_alignments.zip)
 * [Summaries of putative sweep regions](files/sweeps.xlsx)
 * [PCR primers used in this study](files/primers.xlsx)
-* [Predicted genotype for 1306 lines with respect to the transposition on chromosome 1, and the large inversion on chromosome 4 (Supplementary Fig. 17).](sweep_knob.csv)
+* [Predicted genotype for 1306 lines with respect to the transposition on chromosome 1, and the large inversion on chromosome 4 (Supplementary Fig. 17).](files/sweep_knob.csv)
 * [Genes in the swept transposition on chromosome 1](files/genes_in_transposition.xlsx)
 * [North and south labels](files/northAndSouth.csv)
 
